@@ -13,13 +13,13 @@ export default function TodoApp() {
   const [todos, setTodos] = useState<Todo[]>([]);
   const [inputValue, setInputValue] = useState("");
 
-  // Load from local storage on mount
+  
   useEffect(() => {
     const saved = localStorage.getItem("portfolio-todos");
     if (saved) setTodos(JSON.parse(saved));
   }, []);
 
-  // Save to local storage on change
+  
   useEffect(() => {
     localStorage.setItem("portfolio-todos", JSON.stringify(todos));
   }, [todos]);
